@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: green_taxi_data_sources
+    description: 'Green Taxi Database Provided by BigQuery'
+    schema: dbt_wzalmawati
+    tables:
+      - name: data_green_taxi
+        description: 'Details about transaction from Green Taxi'
+
+models:
+  - name: green_taxi_model
+    columns:
+    - name: VendorID
+      description: "The primary key for this table"
+      tests:
+        - unique
+        - not_null
